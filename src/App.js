@@ -39,13 +39,20 @@ function App() {
         })
 
       })
+
+      spotify.getUserPlaylists().then((playlists)=>{
+        dispatch({
+          type: 'SET_PLAYLISTS',
+          playlists:playlists
+        })
+      })
     }
 
     console.log("I gave a token >>>", token);
   }, []);
 
 
-
+  
 
   return (
     <div className="app">
